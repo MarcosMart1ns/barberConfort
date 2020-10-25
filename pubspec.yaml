@@ -41,6 +41,15 @@ dev_dependencies:
 flutter:
   assets:
     - lib/src/assets/Logo.png
+  fonts:  
+    - family: RobotoSlab
+      fonts:
+        - asset: lib/src/assets/fonts/RobotoSlab-Regular.ttf
+        - asset: lib/src/assets/fonts/RobotoSlab-Medium.ttf
+          weight: 500
+        - asset: lib/src/assets/fonts/RobotoSlab-Bold.ttf
+          weight: 700
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
