@@ -18,6 +18,7 @@ class LoginState extends State {
         backgroundColor: Theme.of(context).backgroundColor,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
           children: [
             appLogo,
             Text('Faça seu login',
@@ -39,11 +40,11 @@ class LoginState extends State {
                           return null;
                         },
                         style: customTheme.primaryTextTheme.headline6,
-                        textAlign: TextAlign.center,
+                        //textAlign: TextAlign.start,
                         cursorColor: Colors.white,
                         decoration: InputDecoration(
-                          prefixIcon:
-                              Icon(Icons.mail_outline, color: Colors.white),
+                          prefixIcon: Icon(Icons.mail_outline,
+                              color: customTheme.iconTheme.color),
                           hintStyle: TextStyle(color: Colors.white),
                           hintText: 'E-mail',
                           errorBorder: OutlineInputBorder(
@@ -59,7 +60,7 @@ class LoginState extends State {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: EdgeInsets.only(bottom: 15),
                       child: TextFormField(
                         obscureText: true,
                         controller: inputPWController,
@@ -70,12 +71,11 @@ class LoginState extends State {
                           return null;
                         },
                         style: customTheme.primaryTextTheme.headline6,
-                        textAlign: TextAlign.center,
-                        cursorColor: Colors.white,
                         decoration: InputDecoration(
                           prefixIcon:
                               Icon(Icons.lock_outline, color: Colors.white),
-                          hintStyle: TextStyle(color: Colors.white),
+                          hintStyle:
+                              TextStyle(color: customTheme.iconTheme.color),
                           hintText: 'Senha',
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12.0),
@@ -93,10 +93,14 @@ class LoginState extends State {
                       children: [
                         Expanded(
                           child: RaisedButton(
+                            padding: EdgeInsets.symmetric(vertical: 15),
                             shape: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                                 borderSide: BorderSide.none),
-                            child: Text('Entrar'),
+                            child: Text('Entrar',
+                                style: TextStyle(
+                                    fontSize: customTheme
+                                        .primaryTextTheme.button.fontSize)),
                             onPressed: () {
                               if (_formKey.currentState.validate()) {
                                 print('Email: ' + inputEmailController.text);
@@ -106,20 +110,43 @@ class LoginState extends State {
                         ),
                       ],
                     ),
-                    Text('Esqueci minha senha',
-                        style: customTheme.primaryTextTheme.headline6),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text('Cadastrar-se',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                          )),
-                    )
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 20),
+                      child: Text('Esqueci minha senha',
+                          style: customTheme.primaryTextTheme.headline6),
+                    ),
                   ],
                 ),
               ),
             ),
+            Expanded(
+                child: Container(
+                    alignment: Alignment.bottomCenter,
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: RaisedButton(
+                                padding: EdgeInsets.symmetric(vertical: 20),
+                                color: Colors.black12,
+                                shape: Border(
+                                    top: BorderSide(
+                                        color: Color.fromRGBO(35, 33, 41, 1))),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.subdirectory_arrow_right,
+                                        color: Color.fromRGBO(45, 87, 253, 1)),
+                                    Text(
+                                      'Criar uma conta',
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(45, 87, 253, 1)),
+                                    ),
+                                  ],
+                                ),
+                                onPressed: () => print('conta criada!!'))),
+                      ],
+                    )))
           ],
         ));
   }
