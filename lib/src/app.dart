@@ -1,5 +1,5 @@
-import 'package:BarberConfort/src/screens/splash.dart';
-import 'package:BarberConfort/src/screens/home.dart';
+//WWimport 'package:BarberConfort/src/screens/splash.dart';
+import 'package:BarberConfort/src/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/utils/setNavStatusBar.dart';
 import 'package:BarberConfort/src/themes/theme.dart';
@@ -7,13 +7,12 @@ import 'package:BarberConfort/src/themes/theme.dart';
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    setSysColor(
-        CustomTheme().theme.primaryColor, CustomTheme().theme.primaryColor);
+    setSysColor(customTheme.primaryColor, customTheme.primaryColor);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: CustomTheme().theme,
-      home: Home(),
+      theme: customTheme,
+      home: Login(),
     );
   }
 }
