@@ -1,4 +1,4 @@
-//WWimport 'package:BarberConfort/src/screens/splash.dart';
+//import 'package:BarberConfort/src/screens/splash.dart';
 import 'package:BarberConfort/src/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/utils/setNavStatusBar.dart';

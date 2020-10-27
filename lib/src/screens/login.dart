@@ -1,6 +1,9 @@
+import 'package:BarberConfort/src/screens/splash.dart';
+import 'package:BarberConfort/src/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/widgets/showLogo.dart';
 import 'package:BarberConfort/src/themes/theme.dart';
+import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
 
 class Login extends StatefulWidget {
   LoginState createState() => LoginState();
@@ -16,15 +19,19 @@ class LoginState extends State {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Theme.of(context).backgroundColor,
-        body: Column(
+        body: Container(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: [
-            appLogo,
+            SizedBox(
+              width: getDeviceWidth(context) * 0.60,
+              child: appLogo,
+            ),
             Text('Faça seu login',
                 style: Theme.of(context).primaryTextTheme.headline6),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 45, vertical: 20),
+              margin: EdgeInsets.symmetric(horizontal: 45, vertical: 10),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -102,9 +109,13 @@ class LoginState extends State {
                                     fontSize: customTheme
                                         .primaryTextTheme.button.fontSize)),
                             onPressed: () {
-                              if (_formKey.currentState.validate()) {
-                                print('Email: ' + inputEmailController.text);
-                              }
+                              //if (_formKey.currentState.validate()) {
+                              Navigator.of(context).pop();
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return Home();
+                              }));
+                              //}
                             },
                           ),
                         ),
@@ -144,10 +155,17 @@ class LoginState extends State {
                                     ),
                                   ],
                                 ),
-                                onPressed: () => print('conta criada!!'))),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return Splash();
+                                    }),
+                                  );
+                                })),
                       ],
                     )))
           ],
-        ));
+        )));
   }
 }
