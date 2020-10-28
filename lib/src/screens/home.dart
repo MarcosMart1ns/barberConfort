@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:BarberConfort/src/widgets/avatar.dart';
-import 'package:BarberConfort/src/widgets/barberCard.dart';
 import 'package:BarberConfort/src/view_controllers/getBarbers.dart';
 import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
 import 'package:BarberConfort/src/utils/firebase.dart';
