@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "222349459171",
+    "firebase_url": "https://barbercomfort.firebaseio.com",
+    "project_id": "barbercomfort",
+    "storage_bucket": "barbercomfort.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:222349459171:android:d86e656ff686baf89fcfd6",
+        "android_client_info": {
+          "package_name": "com.martinez.BarberComfort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "222349459171-vfvu5p47ai1fl8n66iuj5uk0v5gjj5dq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiAk10JGcqyvEkdNvMWEbCnRlqTr6HcD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "222349459171-vfvu5p47ai1fl8n66iuj5uk0v5gjj5dq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

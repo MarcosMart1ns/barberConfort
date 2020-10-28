@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
-// import 'package:BarberConfort/src/widgets/showLogo.dart';
+
 import 'package:BarberConfort/src/widgets/avatar.dart';
 import 'package:BarberConfort/src/widgets/barberCard.dart';
-import 'package:BarberConfort/src/themes/theme.dart';
+import 'package:BarberConfort/src/view_controllers/getBarbers.dart';
 import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
+import 'package:BarberConfort/src/utils/firebase.dart';
 
 class Home extends StatefulWidget {
   HomeState createState() => HomeState();
 }
 
 class HomeState extends State {
+  @override
+  void initState() {
+    initializeFlutterFire();
+    print('reiniciou');
+    super.initState();
+  }
+
   @override
   build(BuildContext context) {
     return Scaffold(
@@ -44,7 +52,7 @@ class HomeState extends State {
                     alignment: Alignment.topLeft,
                     child: Text('Cabeleireiros',
                         style: Theme.of(context).primaryTextTheme.headline5)),
-                barberCard('Marcos', 'Segunda a Sexta', '8h as 18h', context),
+                getBarbers,
               ],
             )));
   }
