@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:BarberConfort/src/widgets/avatar.dart';
+import 'package:BarberConfort/src/utils/setNavStatusBar.dart';
+import 'package:BarberConfort/src/themes/theme.dart';
 import 'package:BarberConfort/src/view_controllers/getBarbers.dart';
 import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
 import 'package:BarberConfort/src/utils/firebase.dart';
@@ -19,14 +19,11 @@ class HomeState extends State {
 
   @override
   build(BuildContext context) {
+    setSysColor(customTheme.backgroundColor, customTheme.primaryColor);
     return Scaffold(
-        backgroundColor: Colors.grey[900], //Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).backgroundColor,
+        drawer: Drawer(),
         appBar: AppBar(
-            actions: [
-              Container(
-                  margin: EdgeInsets.symmetric(horizontal: 14),
-                  child: avatar(context))
-            ],
             toolbarHeight: getDeviceHeight(context) * 0.15,
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

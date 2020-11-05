@@ -4,7 +4,7 @@ final ThemeData customTheme = ThemeData(
   visualDensity: VisualDensity.adaptivePlatformDensity,
   brightness: Brightness.light,
   primaryColor: Colors.black,
-  backgroundColor: Colors.black38,
+  backgroundColor: Colors.grey[900], //Colors.black38,
   primaryTextTheme: TextTheme(
     headline6: TextStyle(color: Colors.white),
     headline5: TextStyle(color: Colors.white, fontSize: 25),

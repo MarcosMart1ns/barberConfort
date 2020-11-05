@@ -18,7 +18,7 @@ class LoginState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Colors.black38, //Theme.of(context).backgroundColor,
         body: Container(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
