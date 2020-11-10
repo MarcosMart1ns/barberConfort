@@ -8,7 +8,7 @@ final ThemeData customTheme = ThemeData(
   primaryTextTheme: TextTheme(
     headline6: TextStyle(color: Colors.white),
     headline5: TextStyle(color: Colors.white, fontSize: 25),
-    button: TextStyle(fontSize: 16),
+    button: TextStyle(fontSize: 16, color: Colors.black),
     bodyText1: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
   ),
   fontFamily: 'RobotoSlab',

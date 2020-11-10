@@ -13,7 +13,6 @@ class HomeState extends State {
   @override
   void initState() {
     initializeFlutterFire();
-    print('reiniciou');
     super.initState();
   }
 
