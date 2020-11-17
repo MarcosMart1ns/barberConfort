@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
 import 'package:BarberConfort/src/utils/formatString.dart';
-import 'package:BarberConfort/src/model/Barber.dart';
-import 'package:BarberConfort/src/widgets/miniCard.dart';
 import 'package:BarberConfort/src/view_controllers/agendamentoController.dart';
 
-class SchedulePage extends StatefulWidget {
-  Barber barberInfo;
+class ScheduleEdit extends StatefulWidget {
+  var barberInfo;
+  String scheduleKey;
 
-  SchedulePage(Barber barber) {
+  ScheduleEdit(String scheduleKey, barber) {
     this.barberInfo = barber;
+    this.scheduleKey = scheduleKey;
   }
 
-  ScheduleState createState() => new ScheduleState(barberInfo);
+  ScheduleEditState createState() =>
+      new ScheduleEditState(barberInfo, scheduleKey);
 }
 
-class ScheduleState extends State<SchedulePage> {
-  Barber barberInfo;
+class ScheduleEditState extends State<ScheduleEdit> {
+  Map<dynamic, dynamic> barberInfo;
+  String scheduleKey;
+  dynamic defaultDate;
+  dynamic defaultTime;
 
-  ScheduleState(Barber barber) {
+  ScheduleEditState(barber, scheduleKey) {
     this.barberInfo = barber;
+    this.scheduleKey = scheduleKey;
+    this.defaultDate = barberInfo["data"];
+    this.defaultTime = barberInfo["hora"];
   }
 
   DateTime selectedDate = DateTime.now();
@@ -91,7 +98,7 @@ class ScheduleState extends State<SchedulePage> {
         appBar: AppBar(
           toolbarHeight: getDeviceHeight(context) * 0.15,
           centerTitle: true,
-          title: Text('Agendamento',
+          title: Text('Re-Agendamento',
               style: Theme.of(context).primaryTextTheme.headline5),
         ),
         body: Container(
@@ -104,9 +111,9 @@ class ScheduleState extends State<SchedulePage> {
                   margin: EdgeInsets.symmetric(
                       vertical: getDeviceWidth(context) * 0.04),
                   alignment: Alignment.topLeft,
-                  child: Text('Com o(a) Cabelereiro(a): ',
+                  child: Text(
+                      'Selecione uma outra data e horário para reagendar com ${barberInfo["BarberName"]} ',
                       style: Theme.of(context).primaryTextTheme.headline6)),
-              miniCard(barberInfo.name, barberInfo.avatarUrl, context),
               //DATEPICKER
               Expanded(
                   child: Container(
@@ -154,7 +161,7 @@ class ScheduleState extends State<SchedulePage> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
-                                                Text('Selecione uma data ',
+                                                Text('Alterar data ',
                                                     style: Theme.of(context)
                                                         .primaryTextTheme
                                                         .button),
@@ -203,7 +210,7 @@ class ScheduleState extends State<SchedulePage> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          Text('Selecione um horário ',
+                                          Text('Alterar horário ',
                                               style: Theme.of(context)
                                                   .primaryTextTheme
                                                   .button),
@@ -228,9 +235,15 @@ class ScheduleState extends State<SchedulePage> {
                             shape: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                                 borderSide: BorderSide.none),
-                            onPressed: () => createSchedule(selectedDate,
-                                selectedTime, context, barberInfo),
-                            child: Text('Concluir agendamento',
+                            onPressed: () {
+                              updateSchedule(
+                                  selectedDate,
+                                  selectedTime,
+                                  context,
+                                  barberInfo["BarberName"],
+                                  scheduleKey);
+                            },
+                            child: Text('Reagendar',
                                 style:
                                     Theme.of(context).primaryTextTheme.button),
                           ),

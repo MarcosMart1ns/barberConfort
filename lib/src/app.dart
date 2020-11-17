@@ -1,5 +1,5 @@
 //import 'package:BarberConfort/src/screens/splash.dart';
-import 'package:BarberConfort/src/screens/login.dart';
+import 'package:BarberConfort/src/screens/Login.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/utils/setNavStatusBar.dart';
 import 'package:BarberConfort/src/themes/theme.dart';

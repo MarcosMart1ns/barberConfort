@@ -1,18 +1,19 @@
-import 'package:BarberConfort/src/screens/SignUp.dart';
-import 'package:BarberConfort/src/screens/Splash.dart';
+import 'package:BarberConfort/src/model/User.dart';
+import 'package:BarberConfort/src/view_controllers/cadastroController.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:BarberConfort/src/screens/Home.dart';
-import 'package:BarberConfort/src/view_controllers/loginController.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/widgets/showLogo.dart';
 import 'package:BarberConfort/src/themes/theme.dart';
 import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
 
-class Login extends StatefulWidget {
-  LoginState createState() => LoginState();
+class SignUp extends StatefulWidget {
+  SignUpState createState() => SignUpState();
 }
 
-class LoginState extends State {
+class SignUpState extends State {
   final TextEditingController inputEmailController = TextEditingController();
+  final TextEditingController inputNameController = TextEditingController();
   final TextEditingController inputPWController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -30,7 +31,7 @@ class LoginState extends State {
               width: getDeviceWidth(context) * 0.60,
               child: appLogo,
             ),
-            Text('Faça seu login',
+            Text('Crie sua Conta',
                 style: Theme.of(context).primaryTextTheme.headline6),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 45, vertical: 10),
@@ -41,11 +42,46 @@ class LoginState extends State {
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 10),
                       child: TextFormField(
+                        keyboardType: TextInputType.name,
+                        controller: inputNameController,
+                        validator: (value) {
+                          if (value.trim().isEmpty) {
+                            return 'Esta campo não pode estar vazio';
+                          }
+                          return null;
+                        },
+                        style: customTheme.primaryTextTheme.headline6,
+                        cursorColor: Colors.white,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.person_outline,
+                              color: customTheme.iconTheme.color),
+                          hintStyle: TextStyle(color: Colors.white),
+                          hintText: 'Nome',
+                          errorBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                            borderSide: BorderSide(color: Colors.red),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              borderSide: BorderSide.none),
+                          fillColor: Color.fromRGBO(35, 33, 41, 1),
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: TextFormField(
+                        keyboardType: TextInputType.emailAddress,
                         controller: inputEmailController,
                         validator: (value) {
                           if (value.trim().isEmpty) {
                             return 'Esta campo não pode estar vazio';
                           }
+                          if (!(EmailValidator.validate(value))) {
+                            return 'Insira um email válido';
+                          }
+
                           return null;
                         },
                         style: customTheme.primaryTextTheme.headline6,
@@ -106,14 +142,18 @@ class LoginState extends State {
                             shape: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0),
                                 borderSide: BorderSide.none),
-                            child: Text('Entrar',
+                            child: Text('Cadastrar',
                                 style: TextStyle(
                                     fontSize: customTheme
                                         .primaryTextTheme.button.fontSize)),
                             onPressed: () {
                               if (_formKey.currentState.validate()) {
-                                showAllUsers(inputEmailController.text,
-                                    inputPWController.text, context);
+                                cadastrar(
+                                    new User(
+                                        inputEmailController.text,
+                                        inputNameController.text,
+                                        inputPWController.text),
+                                    context);
                               }
                             },
                           ),
@@ -139,10 +179,10 @@ class LoginState extends State {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(Icons.subdirectory_arrow_right,
+                                    Icon(Icons.arrow_back,
                                         color: Color.fromRGBO(45, 87, 253, 1)),
                                     Text(
-                                      'Criar uma conta',
+                                      'Voltar para o login',
                                       style: TextStyle(
                                           color:
                                               Color.fromRGBO(45, 87, 253, 1)),
@@ -150,12 +190,7 @@ class LoginState extends State {
                                   ],
                                 ),
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (context) {
-                                      return SignUp();
-                                    }),
-                                  );
+                                  Navigator.pop(context);
                                 })),
                       ],
                     )))

@@ -88,3 +88,10 @@ String weekdayController(int weekday) {
       throw Error();
   }
 }
+
+//outputs in 2012-02-27 13:27:00 format
+String dateAndTimeToUnic(String date, String time) {
+  var dateFormated = date.split('/');
+
+  return '${dateFormated[2]}-${dateFormated[1]}-${dateFormated[0]} ${time}:00';
+}

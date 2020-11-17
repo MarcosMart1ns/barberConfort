@@ -1,5 +1,5 @@
 import 'package:BarberConfort/src/widgets/avatar.dart';
-import 'package:BarberConfort/src/screens/schedulePage.dart';
+import 'package:BarberConfort/src/screens/SchedulePage.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/utils/getDeviceInfo.dart';
 import 'package:BarberConfort/src/model/Barber.dart';
