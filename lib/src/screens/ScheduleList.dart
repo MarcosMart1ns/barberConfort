@@ -13,9 +13,9 @@ class ScheduleListState extends State<ScheduleList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          toolbarHeight: getDeviceHeight(context) * 0.15,
+          toolbarHeight: getDeviceHeight(context) * 0.10,
           centerTitle: true,
-          title: Text('Lista de Agendamentos',
+          title: Text('Agendamentos',
               style: Theme.of(context).primaryTextTheme.headline5),
         ),
         backgroundColor: customTheme.backgroundColor,

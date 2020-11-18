@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/themes/theme.dart';
-import 'package:BarberConfort/src/widgets/hyperlink.dart';
 
 Future<void> customAlertDialog(context, title, [msg]) async {
   return showDialog<void>(

@@ -7,15 +7,15 @@ miniCard(String title, String avatarUrl, context) {
     shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0), borderSide: BorderSide.none),
     child: Container(
-      height: getDeviceHeight(context) * 0.10,
+      height: getDeviceHeight(context) * 0.08,
       width: getDeviceWidth(context) * 0.50,
       padding: EdgeInsets.symmetric(
           horizontal: getDeviceWidth(context) * 0.03,
-          vertical: getDeviceHeight(context) * 0.02),
+          vertical: getDeviceHeight(context) * 0.01),
       child: Row(
         children: [
           SizedBox(
-            height: getDeviceHeight(context) * 0.08,
+            height: getDeviceHeight(context) * 0.05,
             width: getDeviceWidth(context) * 0.10,
             child: avatar(context, avatarUrl),
           ),

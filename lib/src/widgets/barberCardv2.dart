@@ -34,13 +34,13 @@ barberCard(
                       vertical: getDeviceHeight(context) * 0.01,
                       horizontal: getDeviceWidth(context) * 0.05),
                   leading: SizedBox(
-                    width: getDeviceWidth(context) * 0.14,
+                    width: getDeviceWidth(context) * 0.15,
                     height: getDeviceHeight(context) * 0.14,
                     child: avatar(context, avatarUrl),
                   ),
                   title: Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: getDeviceWidth(context) * 0.02),
+                      padding: EdgeInsets.only(
+                          bottom: getDeviceWidth(context) * 0.02),
                       child: Text(name,
                           style: Theme.of(context).primaryTextTheme.headline6)),
                   isThreeLine: true,

@@ -93,5 +93,5 @@ String weekdayController(int weekday) {
 String dateAndTimeToUnic(String date, String time) {
   var dateFormated = date.split('/');
 
-  return '${dateFormated[2]}-${dateFormated[1]}-${dateFormated[0]} ${time}:00';
+  return '${dateFormated[2]}-${dateFormated[1]}-${dateFormated[0]} $time:00';
 }

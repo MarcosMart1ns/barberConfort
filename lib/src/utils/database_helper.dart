@@ -1,6 +1,5 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
 import '../model/User.dart';
 
 final String _databaseName = "database.db";
@@ -10,8 +9,6 @@ final String _createUsersScript =
 
 //inicia o banco e o cria se não existir
 Future<Database> _getDatabase() async {
-  Sqflite.devSetDebugModeOn(true);
-
   return openDatabase(
     join(
       await getDatabasesPath(),

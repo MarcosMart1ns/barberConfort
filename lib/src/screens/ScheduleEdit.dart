@@ -96,7 +96,7 @@ class ScheduleEditState extends State<ScheduleEdit> {
     return Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-          toolbarHeight: getDeviceHeight(context) * 0.15,
+          toolbarHeight: getDeviceHeight(context) * 0.10,
           centerTitle: true,
           title: Text('Re-Agendamento',
               style: Theme.of(context).primaryTextTheme.headline5),

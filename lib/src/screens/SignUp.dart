@@ -1,7 +1,6 @@
 import 'package:BarberConfort/src/model/User.dart';
 import 'package:BarberConfort/src/view_controllers/cadastroController.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:BarberConfort/src/screens/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/widgets/showLogo.dart';
 import 'package:BarberConfort/src/themes/theme.dart';

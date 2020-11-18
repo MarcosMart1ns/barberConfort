@@ -1,7 +1,6 @@
 import 'package:BarberConfort/src/screens/SignConcluded.dart';
 import 'package:BarberConfort/src/widgets/customAlertDialog.dart';
 import 'package:flutter/material.dart';
-import 'package:BarberConfort/src/screens/Home.dart';
 import 'package:BarberConfort/src/model/User.dart';
 import 'package:BarberConfort/src/utils/database_helper.dart';
 

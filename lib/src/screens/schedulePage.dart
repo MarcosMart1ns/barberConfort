@@ -89,7 +89,7 @@ class ScheduleState extends State<SchedulePage> {
     return Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-          toolbarHeight: getDeviceHeight(context) * 0.15,
+          toolbarHeight: getDeviceHeight(context) * 0.10,
           centerTitle: true,
           title: Text('Agendamento',
               style: Theme.of(context).primaryTextTheme.headline5),

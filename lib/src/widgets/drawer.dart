@@ -25,6 +25,7 @@ Widget sideMenu(context) {
         ListTile(
           title: drawerItem('Agendamentos', Icons.calendar_today, context),
           onTap: () {
+            Navigator.pop(context);
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return new ScheduleList();
             }));

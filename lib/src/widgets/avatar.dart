@@ -5,7 +5,7 @@ avatar(context, [String avatarUrl]) {
   if (avatarUrl != null) {
     return CircleAvatar(
       backgroundImage: NetworkImage(avatarUrl),
-      radius: getDeviceHeight(context) * 0.05,
+      radius: getDeviceHeight(context) * 0.06,
       backgroundColor: Colors.white,
     );
   }

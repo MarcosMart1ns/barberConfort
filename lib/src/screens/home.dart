@@ -25,7 +25,7 @@ class HomeState extends State {
         backgroundColor: Theme.of(context).backgroundColor,
         drawer: sideMenu(context),
         appBar: AppBar(
-            toolbarHeight: getDeviceHeight(context) * 0.15,
+            toolbarHeight: getDeviceHeight(context) * 0.10,
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -45,10 +45,17 @@ class HomeState extends State {
               children: [
                 Container(
                     margin: EdgeInsets.symmetric(
-                        vertical: getDeviceHeight(context) * 0.05),
+                        vertical: getDeviceHeight(context) * 0.03),
                     alignment: Alignment.topLeft,
                     child: Text('Cabeleireiros',
                         style: Theme.of(context).primaryTextTheme.headline5)),
+                Container(
+                    margin: EdgeInsets.only(
+                        bottom: getDeviceHeight(context) * 0.03),
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                        'Selecione um cabelereiro abaixo para agendar um atendimento:',
+                        style: Theme.of(context).primaryTextTheme.headline6)),
                 getBarbers,
               ],
             )));

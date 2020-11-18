@@ -1,6 +1,4 @@
 import 'package:BarberConfort/src/screens/SignUp.dart';
-import 'package:BarberConfort/src/screens/Splash.dart';
-import 'package:BarberConfort/src/screens/Home.dart';
 import 'package:BarberConfort/src/view_controllers/loginController.dart';
 import 'package:flutter/material.dart';
 import 'package:BarberConfort/src/widgets/showLogo.dart';
