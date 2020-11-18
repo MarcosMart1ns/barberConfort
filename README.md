@@ -11,12 +11,14 @@ Um aplicativo para agendamento com barbeiros cadastrados, construído com a ling
 
 ## Screen Shots
 
+<div>
 <img src="docs/1.png" width=180> 
 <img src="docs/2.png" width=180> 
 <img src="docs/3.png" width=180> 
 <img src="docs/4.png" width=180> 
 <img src="docs/5.png" width=180> 
 <img src="docs/6.png" width=180> 
+</div>
 
 ## Tecnologias usadas
 
