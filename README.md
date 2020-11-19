@@ -1,9 +1,11 @@
 [![Build Status](https://img.shields.io/appveyor/ci/thiagoloureiro/netcore-jwt-integrator-extension/master.svg)](#)
 [![](https://img.shields.io/tokei/lines/github/xMartinezZz/barberConfort)](#)
 [![](https://img.shields.io/github/repo-size/xMartinezZz/barberConfort)](#)
+![](https://visitor-badge.glitch.me/badge?page_id=xMartinezZz.barberConfort)
 [![GitHub Follow](https://img.shields.io/badge/Connect-xMartinezZz-blue.svg?logo=Github&longCache=true&style=social&label=Follow)](https://github.com/xMartinezZz)
 [![LinkedIn Link](https://img.shields.io/badge/Connect-Marcos%20Martins-blue.svg?logo=linkedin&longCache=true&style=social&label=Connect
 )](https://www.linkedin.com/in/whoismartins)
+
 
 # BarberConfort
 
